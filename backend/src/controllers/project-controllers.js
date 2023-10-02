@@ -26,7 +26,7 @@ const getAllListedProjects = catchAsync(async (req, res) => {
     res.status(200).json({ success: 'true', allListedProjects })
 })
 
-const getProjectByID = catchAsync(async (req, res) => {
+const getProjectByID = catchAsync(async (req, res, next) => {
     const { id } = req.params
     const project = await projectDetails.findById({ _id: id })
 
@@ -35,7 +35,7 @@ const getProjectByID = catchAsync(async (req, res) => {
     res.status(200).json({ success: 'true', project })
 })
 
-const updateProjectByID = catchAsync(async (req, res) => {
+const updateProjectByID = catchAsync(async (req, res, next) => {
     const { id } = req.params
     const updatedData = req.body
 

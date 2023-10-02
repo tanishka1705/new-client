@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "invoice",
-    "dateExported": "2023-10-02T11:27:53.318Z",
+    "dateExported": "2023-10-02T15:45:26.719Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-10-01T12:38:09.881Z",
-            "modified": "2023-10-02T08:55:44.756Z",
+            "modified": "2023-10-02T15:44:16.702Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Google\",\n  \"gstin\": \"23AACGTI1388TUN4\",\n  \"address\": {\n    \"street\": \"8th floor atulya IT park, khandwa road\",\n    \"city\": \"Indore\",\n    \"state\": \"mp\",\n    \"pin\": \"454441\",\n    \"country\": \"india\"\n  }\n}",
+                "raw": "{\n  \"name\": \"Infosysss\",\n  \"gstin\": 7875,\n  \"address\": {\n    \"street\": \"8th floor atulya IT park, khandwa road\",\n    \"city\": \"Indore\",\n    \"state\": \"mp\",\n    \"pin\": \"454441\",\n    \"country\": \"india\"\n  }\n}",
                 "form": []
             },
             "tests": []
@@ -43,16 +43,16 @@
             "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
             "containerId": "",
             "name": "update",
-            "url": "{{company}}/651a8590fd675eec50f750f5",
+            "url": "{{company}}/651a7e89e5c042082af4e734",
             "method": "PATCH",
             "sortNum": 20000,
             "created": "2023-10-01T13:34:17.094Z",
-            "modified": "2023-10-02T08:56:35.565Z",
+            "modified": "2023-10-02T15:31:42.354Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"gstin\": \"23AACGTI1388TUVN\",\n  \"address\": {\n    \"state\": \"MH\"\n  }\n}",
+                "raw": "{\n  \"gstin\": \"23AACGTI1388TUVN\",\n  \"address\": {\n    \"state\": \"MP\"\n  }\n}",
                 "form": []
             },
             "tests": []
@@ -76,11 +76,11 @@
             "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
             "containerId": "",
             "name": "getbyid",
-            "url": "{{company}}/651981c84fbd68ca6cde4264",
+            "url": "{{company}}/651a7e89e5c042082af4e734",
             "method": "GET",
             "sortNum": 60000,
             "created": "2023-10-01T14:28:45.365Z",
-            "modified": "2023-10-02T08:57:23.762Z",
+            "modified": "2023-10-02T15:31:00.061Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -123,11 +123,11 @@
             "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
             "containerId": "",
             "name": "projectbtid",
-            "url": "{{project}}/651a775d2b5e86c894cf0707",
+            "url": "{{project}}/651a8a03ff335b7797aa2310",
             "method": "GET",
             "sortNum": 90000,
             "created": "2023-10-02T07:54:11.321Z",
-            "modified": "2023-10-02T07:55:32.746Z",
+            "modified": "2023-10-02T15:29:42.890Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -177,6 +177,25 @@
             "modified": "2023-10-02T09:52:18.545Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "be2f1952-e5eb-40c2-b273-797d24036212",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "create-invoice",
+            "url": "{{invoice}}",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2023-10-02T11:30:26.877Z",
+            "modified": "2023-10-02T14:29:46.555Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"company_name\": \"Techracers private limited\",\n  \"date\":\"2023-08-04\",\n  \"invoice\": [\n    {\"id\": 1, \"description\": \"QA on Builder(Ashish)\", \"period\": 2, \"rate\": 4, \"conversionRate\": \"82.05\", \"amount\": \"5907.6\"},\n    {\"id\": 2, \"description\": \"QA on Builder(Ashish)\", \"period\": 2, \"rate\": 4, \"conversionRate\": \"82.05\", \"amount\": \"5907.6\"}\n    ],\n  \"subtotal\": \"27000\",\n  \"gst\": {\"cgst\": \"45.222\", \"sgst\": \"78.22\"},\n  \"total\": \"27500.55\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]
