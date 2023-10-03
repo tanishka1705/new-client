@@ -1,0 +1,202 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "invoice",
+    "dateExported": "2023-10-02T15:45:26.719Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6f851bd0-e16f-48ee-b7d2-568e5838376c",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "create",
+            "url": "http://localhost:5000/api/v1/companies",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-10-01T12:38:09.881Z",
+            "modified": "2023-10-02T15:44:16.702Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Infosysss\",\n  \"gstin\": 7875,\n  \"address\": {\n    \"street\": \"8th floor atulya IT park, khandwa road\",\n    \"city\": \"Indore\",\n    \"state\": \"mp\",\n    \"pin\": \"454441\",\n    \"country\": \"india\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d879ba42-f58b-404b-9870-93c485fbb524",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "getall",
+            "url": "{{company}}",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-10-01T13:05:36.221Z",
+            "modified": "2023-10-01T13:39:54.285Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1412f48d-c4d2-4455-ad7b-b9afe743a75f",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "update",
+            "url": "{{company}}/651a7e89e5c042082af4e734",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-10-01T13:34:17.094Z",
+            "modified": "2023-10-02T15:31:42.354Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"gstin\": \"23AACGTI1388TUVN\",\n  \"address\": {\n    \"state\": \"MP\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "940bd5d4-66ad-4ba3-ac84-990ffaa45faa",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "delete",
+            "url": "{{company}}/651a8590fd675eec50f750f5",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-10-01T14:19:27.348Z",
+            "modified": "2023-10-02T08:56:46.951Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "55753773-edfa-45c9-bb3d-c251cc364146",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "getbyid",
+            "url": "{{company}}/651a7e89e5c042082af4e734",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-10-01T14:28:45.365Z",
+            "modified": "2023-10-02T15:31:00.061Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5486af05-b6ee-441d-be37-d55123133da8",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "createproject",
+            "url": "{{project}}/",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-10-02T06:55:48.877Z",
+            "modified": "2023-10-02T09:16:25.599Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"description\": \"QA on Builder(Muskan)\",\n  \"rate\": \"5\",\n  \"totalHours\": \"18\",\n  \"conversionRate\": \"82.05\",\n  \"companyId\": \"651a7e89e5c042082af4e730\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ca45ef6d-6b87-42a3-a10f-60a33b1bd5c9",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "allprojects",
+            "url": "{{project}}/",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-10-02T07:39:43.256Z",
+            "modified": "2023-10-02T07:40:03.626Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4cae98a1-5f91-4b80-a35d-a91ed7d18297",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "projectbtid",
+            "url": "{{project}}/651a8a03ff335b7797aa2310",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-10-02T07:54:11.321Z",
+            "modified": "2023-10-02T15:29:42.890Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "87edf7c8-0906-4b79-b785-a2a3ace70c85",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "updateprojectbyid",
+            "url": "{{project}}/651a775d2b5e86c894cf0707",
+            "method": "PATCH",
+            "sortNum": 100000,
+            "created": "2023-10-02T07:58:46.933Z",
+            "modified": "2023-10-02T08:19:54.551Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rate\": \"5\",\n  \"totalHours\": \"18\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "087e9754-fd80-44a5-bd87-786d43fb13b4",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "deleteProjectById",
+            "url": "{{project}}/651a8363ac7d9b0a7ea6fee9",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2023-10-02T08:35:38.462Z",
+            "modified": "2023-10-02T08:47:06.223Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1a4d532b-64c9-4dcb-9131-3b069440e080",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "getprojectofcompany",
+            "url": "{{company}}/project/651a7e89e5c042082af4e731",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-10-02T09:25:55.808Z",
+            "modified": "2023-10-02T09:52:18.545Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "be2f1952-e5eb-40c2-b273-797d24036212",
+            "colId": "9e4307ed-25f2-40f9-93de-0ef0a832ef3e",
+            "containerId": "",
+            "name": "create-invoice",
+            "url": "{{invoice}}",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2023-10-02T11:30:26.877Z",
+            "modified": "2023-10-02T14:29:46.555Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"company_name\": \"Techracers private limited\",\n  \"date\":\"2023-08-04\",\n  \"invoice\": [\n    {\"id\": 1, \"description\": \"QA on Builder(Ashish)\", \"period\": 2, \"rate\": 4, \"conversionRate\": \"82.05\", \"amount\": \"5907.6\"},\n    {\"id\": 2, \"description\": \"QA on Builder(Ashish)\", \"period\": 2, \"rate\": 4, \"conversionRate\": \"82.05\", \"amount\": \"5907.6\"}\n    ],\n  \"subtotal\": \"27000\",\n  \"gst\": {\"cgst\": \"45.222\", \"sgst\": \"78.22\"},\n  \"total\": \"27500.55\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
