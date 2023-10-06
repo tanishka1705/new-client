@@ -30,6 +30,13 @@ export default function Sidebar() {
     },
   };
 
+  //temporary dashboard link on home 
+const email = 'user@example.com';
+const password = 'secretPassword';
+
+const dashboardLink = `/dashboard?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
+
+
   return (
     <Box
       w="18em"
@@ -45,7 +52,7 @@ export default function Sidebar() {
         <UnorderedList listStyleType={"none"} spacing={5}>
         <HStack>
             <Image src="/images/homelogo.svg" w="1.2em" />
-            <Link href='/'>
+            <Link href={dashboardLink}>
               <ListItem _hover={listItemStyles}>Home</ListItem>
             </Link> 
           </HStack>

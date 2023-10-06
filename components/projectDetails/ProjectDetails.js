@@ -24,7 +24,7 @@ export default function ProjectDetails() {
     inrRate: '',
   });
 
-  const [companyData, setCompanyData] = useState([]);
+ 
 
   useEffect(()=>{
     getCompanies()

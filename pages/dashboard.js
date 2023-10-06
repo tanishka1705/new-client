@@ -1,29 +1,23 @@
-import AdminHome from '../components/adminHome/AdminHome'
-import client from '../api/axiosInstance'
+import React from 'react'
 import Cards from '../components/cards/Card'
+import AdminHome from '../components/adminHome/AdminHome'
 import { Heading } from '@chakra-ui/react'
 import toast from 'react-hot-toast'
-import NoSidebar from '../components/layout/NoSidebar'
-import Login from '../components/auth/Login'
 
-export default function Home() {
+export default function Dashboard({ allListedCompanies, message }) {
 
-  // if (message) toast.error(message)
-
+    if (message) toast.error(message)
+    
   return (
     <>
-      {/* <Cards />
-      {
+     <Cards />
+     {
         allListedCompanies === undefined ?
           <Heading fontSize={'lg'} my='16' textAlign='center'>{message}</Heading>
           : (
             <AdminHome allListedCompanies={allListedCompanies} />
           )
-      } */}
-      <NoSidebar>
-         <Login />
-      </NoSidebar>
-     
+      }
     </>
   )
 }
@@ -43,3 +37,20 @@ export default function Home() {
 //     }
 //   }
 // }
+
+export async function getServerSideProps() {
+  try {
+    const { data } = await client('/companies');
+    if (data?.status === 'true') {
+      return {
+        props: { allListedCompanies: data.allListedCompanies }
+      };
+    } else {
+      throw new Error(data?.message || 'Unknown error occurred');
+    }
+  } catch (error) {
+    return {
+      props: { message: error.response?.data?.message || 'An error occurred' }
+    };
+  }
+}

@@ -1,12 +1,15 @@
 import React from 'react'
-import { Box, Heading, Flex } from '@chakra-ui/react'
+import { Box, Heading, Flex, Divider } from '@chakra-ui/react'
 
 export default function InvoiceHistory() {
   return (
-    <Box>
-      <Flex alignItems='center' justifyContent='center'>
-      <Heading>Show Invoice History</Heading>
-      </Flex>
-    </Box>
+    <Flex flexDirection="column">
+          <Flex alignItems='center' justifyContent='flex-start' mt='1em'>
+            <Box>
+              <Heading size='md' color='#34495E'>Invoice History</Heading>
+            </Box>
+          </Flex>
+          <Divider mt="1em" borderColor="blue.500" borderWidth="0.1em" width="55em" />
+    </Flex>
   )
 }
