@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// function InvoicePDF() {
-//   return (
-//     <div>InvoicePDF</div>
-//   )
-// }
-
-// export default InvoicePDF
-
 
 
 import React from 'react';

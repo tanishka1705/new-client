@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Box, Heading, Flex, Divider, Stack, FormControl, FormLabel, Input, HStack, Text, Link, Select,Table, TableContainer, Thead, Th, Tr } from '@chakra-ui/react'
-import client from '../../api/axiosInstance';
+// import client from '../../api/axiosInstance';
 import InvoiceTable from './InvoiceTable';
 
 export default function GenerateInvoice() {
@@ -11,21 +11,23 @@ export default function GenerateInvoice() {
   const [selectedBillingType, setSelectedBillingType] = useState('');
   const [showTable, setShowTable] = useState(false);
 
+  
 
-  useEffect(() => {
-    selectCompany();
-  }, []);
 
-  async function selectCompany(){
-    const response = await client.get('/companies')
-    const fetchCompanyData = response.data.allListedCompanies;
-    const companyData = fetchCompanyData.map((company)=>({
-      id : company._id,
-      name : company.name,
-    })
-    )
-    setCompanyData(companyData);
-  }
+  // useEffect(() => {
+  //   selectCompany();
+  // }, []);
+
+  // async function selectCompany(){
+  //   const response = await client.get('/companies')
+  //   const fetchCompanyData = response.data.allListedCompanies;
+  //   const companyData = fetchCompanyData.map((company)=>({
+  //     id : company._id,
+  //     name : company.name,
+  //   })
+  //   )
+  //   setCompanyData(companyData);
+  // }
 
   function handleCompanyChange(event) {
     setSelectedCompany(event.target.value);

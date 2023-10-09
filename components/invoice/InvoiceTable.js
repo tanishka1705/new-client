@@ -4,6 +4,9 @@ import { Box,
     Button, 
     Checkbox, 
     Flex, 
+    FormControl, 
+    FormLabel, 
+    Input, 
     Modal, 
     ModalBody, 
     ModalContent, 
@@ -30,6 +33,8 @@ export default function InvoiceTable({ billingType }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedRows, setSelectedRows] = useState([]);
 
+
+
   const invoiceData = [
     { id: 1, description: 'Builder (John Doe)', period: '15May - 15June', workingDays: '30', rate: '3', hour: '20.5', conversionRate: '79.2', amount: '23543' },
     { id: 2, description: 'Builder (Jane Smith)', period: '15May - 15June', workingDays: '30', rate: '2', hour: '10.2', conversionRate: '82.2', amount: '33543' },
@@ -40,7 +45,9 @@ export default function InvoiceTable({ billingType }) {
   const [pdfBlob, setPdfBlob] = useState(null);
 
   const handleCheckboxChange = (invoiceId) => {
+   
     if (selectedRows.includes(invoiceId)) {
+      
       setSelectedRows(selectedRows.filter((id) => id !== invoiceId));
     } else {
       setSelectedRows([...selectedRows, invoiceId]);
@@ -96,7 +103,7 @@ export default function InvoiceTable({ billingType }) {
                 <Th px={1} textAlign={'center'}>Hours</Th>
                 <Th px={1} textAlign={'center'}>Conversion Rate</Th>
                 <Th px={1} textAlign={'center'}>Amount</Th>
-                {/* <Th px={1} textAlign={'center'}>Action</Th> */}
+               
               </Tr>
             </Thead>
             <Tbody>
@@ -115,9 +122,7 @@ export default function InvoiceTable({ billingType }) {
                   <Td px={1} textAlign={'center'}>{invoice.hour}</Td>
                   <Td px={1} textAlign={'center'}>{invoice.conversionRate}</Td>
                   <Td px={1} textAlign={'center'}>{invoice.amount}</Td>
-                  {/* <Td px={1} textAlign={'center'}>
-                    <EditIcon color={'blue.500'} />
-                  </Td> */}
+                
                 </Tr>
               ))}
             </Tbody>
@@ -147,7 +152,46 @@ export default function InvoiceTable({ billingType }) {
           </ModalBody>
         </ModalContent>
       </Modal>
+
+      {/* modal check */}
+
+      {/* <Modal isOpen={isOpen} onClose={onClose} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader></ModalHeader>
+          <ModalBody>
+            {isHourly ? (
+              <Box>
+                <FormControl id="hours" isRequired>
+                  <FormLabel fontWeight="bold">Hours</FormLabel>
+                  <Input type="text" placeholder="Enter hours" />
+                </FormControl>
+              </Box>
+            ) : (
+              <Box>
+                <FormControl id="period" isRequired>
+                  <FormLabel fontWeight="bold">Period</FormLabel>
+                  <Input type="text" placeholder="Enter period" />
+                </FormControl>
+                <FormControl id="workingDays" isRequired>
+                  <FormLabel fontWeight="bold">Working Days</FormLabel>
+                  <Input type="text" placeholder="Enter working days" />
+                </FormControl>
+                <FormControl id="hours" isRequired>
+                  <FormLabel fontWeight="bold">Hours</FormLabel>
+                  <Input type="text" placeholder="Enter hours" />
+                </FormControl>
+              </Box>
+            )}
+            <Button colorScheme="teal" mr={3} mt={5} onClick={onClose}>
+              Close
+            </Button>
+          </ModalBody>
+        </ModalContent>
+      </Modal> */}
     </>
   )
 }
+
+
 
